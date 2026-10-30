@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "domain": "synthetic_algorithm_review",
+  "physical_acceptance": false,
+  "environment": {
+    "python": "3.12.14",
+    "opencv": "5.0.0",
+    "numpy": "2.5.4"
+  },
+  "fixture_sha256": "216efc2a5142e25001b6643464c7d2a5346e882b00f96b8998db3e2527bd73db",
+  "script_sha256": "ee083deb0a5aa2f4dd599e4564262dbefff372be1cf1bee13a15915e72c23556",
+  "limitations": [
+    "Synthetic geometry only; no physical accuracy or Pi latency claim.",
+    "Preserved algorithms contain known defects; not production implementations.",
+    "Checks reproduce observed strengths and defects, not release acceptance."
+  ],
+  "cases": [
+    {
+      "case": "blank",
+      "image_shape": [
+        400,
+        400
+      ],
+      "image_raw_sha256": "cdbf6c0880cfbeebfa8480444fef83685e70091bf1f23a5e8a71564d1f8be33a",
+      "parameters": {
+        "cx": 204,
+        "cy": 197,
+        "r0": 80,
+        "dr": 20
+      },
+      "true_center": null,
+      "algorithms": {
+        "v1": {
+          "status": "RETURNED",
+          "result": [
+            204.0,
+            197.0,
+            60.00000000000004
+          ],
+          "center_error_px": null,
+          "warnings": [
+            "invalid value encountered in divide"
+          ]
+        },
+        "v2": {
+          "status": "REJECTED",
+          "result": null,
+          "center_error_px": null,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "case": "full_circle",
+      "image_shape": [
+        400,
+        400
+      ],
+      "image_raw_sha256": "27247b1f66553d965b7eb81a7efa17fcce1d1c648dffcbdf9fd683939a3444c6",
+      "parameters": {
+        "cx": 204,
+        "cy": 197,
+        "r0": 80,
+        "dr": 20
+      },
+      "true_center": [
+        200,
+        200
+      ],
+      "algorithms": {
+        "v1": {
+          "status": "RETURNED",
+          "result": [
+            199.92243215435772,
+            200.10921197499783,
+            79.54999620118072
+          ],
+          "center_error_px": 0.13395531404357108,
+          "warnings": []
+        },
+        "v2": {
+          "status": "RETURNED",
+          "result": [
+            200.01562825851252,
+            199.98495561016182,
+            79.87273730518815
+          ],
+          "center_error_px": 0.02169276676077421,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "case": "half_circle",
+      "image_shape": [
+        400,
+        400
+      ],
+      "image_raw_sha256": "3b32bbc0a2102e5df3cc973fd5f5c5d1fce8c161eed37be8dfdb01a73f619fb4",
+      "parameters": {
+        "cx": 204,
+        "cy": 197,
+        "r0": 80,
+        "dr": 20
+      },
+      "true_center": [
+        200,
+        200
+      ],
+      "algorithms": {
+        "v1": {
+          "status": "RETURNED",
+          "result": [
+            189.5382428951905,
+            198.48127142605122,
+            70.71195571268436
+          ],
+          "center_error_px": 10.571418930368827,
+          "warnings": [
+            "invalid value encountered in divide"
+          ]
+        },
+        "v2": {
+          "status": "REJECTED",
+          "result": null,
+          "center_error_px": null,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "case": "narrow_full_circle",
+      "image_shape": [
+        400,
+        400
+      ],
+      "image_raw_sha256": "27247b1f66553d965b7eb81a7efa17fcce1d1c648dffcbdf9fd683939a3444c6",
+      "parameters": {
+        "cx": 205,
+        "cy": 200,
+        "r0": 80,
+        "dr": 8
+      },
+      "true_center": [
+        200,
+        200
+      ],
+      "algorithms": {
+        "v2": {
+          "status": "RETURNED",
+          "result": [
+            200.018917794559,
+            199.99986923880752,
+            79.8775595419832
+          ],
+          "center_error_px": 0.018918246469111666,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "case": "ellipse_70_58",
+      "image_shape": [
+        400,
+        400
+      ],
+      "image_raw_sha256": "7c64f020482380198f2b1729ee8fefa785a067cd0fa7c77e52e2d75e108e5292",
+      "parameters": {
+        "cx": 205,
+        "cy": 203,
+        "r0": 64.0,
+        "dr": 8
+      },
+      "true_center": [
+        200,
+        200
+      ],
+      "algorithms": {
+        "v2": {
+          "status": "RETURNED",
+          "result": [
+            201.03669053480075,
+            199.9422873027825,
+            63.097464308572945
+          ],
+          "center_error_px": 1.038295728762088,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "case": "ellipse_80_60",
+      "image_shape": [
+        400,
+        400
+      ],
+      "image_raw_sha256": "a5f57216b47a5e2f9e2850ac9422d63be6d965ea29186450516ac0cb406e5cde",
+      "parameters": {
+        "cx": 205,
+        "cy": 203,
+        "r0": 70.0,
+        "dr": 8
+      },
+      "true_center": [
+        200,
+        200
+      ],
+      "algorithms": {
+        "v2": {
+          "status": "RETURNED",
+          "result": [
+            201.61570314959988,
+            199.58154285515408,
+            67.99643628438687
+          ],
+          "center_error_px": 1.6690125972261478,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "case": "invalid_zero_dr",
+      "image_shape": [
+        400,
+        400
+      ],
+      "image_raw_sha256": "27247b1f66553d965b7eb81a7efa17fcce1d1c648dffcbdf9fd683939a3444c6",
+      "parameters": {
+        "cx": 200,
+        "cy": 200,
+        "r0": 80,
+        "dr": 0
+      },
+      "true_center": [
+        200,
+        200
+      ],
+      "algorithms": {
+        "v2": {
+          "status": "EXCEPTION",
+          "exception": "ValueError",
+          "detail": "attempt to get argmin of an empty sequence",
+          "warnings": []
+        }
+      }
+    }
+  ],
+  "checks": {
+    "v1_blank_returns_spurious_result": true,
+    "v1_half_error_over_5px": true,
+    "v2_blank_rejected": true,
+    "v2_half_rejected": true,
+    "v2_full_circle_error_under_0_1px": true,
+    "v2_ellipse_accepts_error_over_0_8px": true,
+    "v2_invalid_dr_raises": true
+  },
+  "reproduction_checks_passed": true
+}

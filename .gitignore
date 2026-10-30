@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+ring_review.local.json
+.venv/
